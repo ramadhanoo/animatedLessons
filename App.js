@@ -9,10 +9,10 @@ const Stack = createStackNavigator();
 function MyStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Splash" component={Splash} options={{
+
+      <Stack.Screen name="Home" component={Home} options={{
          headerShown: false
-      }} />
-      <Stack.Screen name="Home" component={Home} />
+      }}/>
     </Stack.Navigator>
   );
 }

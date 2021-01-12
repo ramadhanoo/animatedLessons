@@ -57,6 +57,11 @@ const Splash = (props) => {
     outputRange: [0, 60, 4000],
   })
 
+  const mengecil = naik.interpolate({
+    inputRange: [0, 50],
+    outputRange: [70, 0],
+  })
+
   console.log(tambah)
 
   useEffect(() => {
@@ -66,7 +71,7 @@ const Splash = (props) => {
   return (
     <View style={styles.container}>
       <Animated.View style={[{ width: 100, height: fadeAnim, backgroundColor: '#222831', justifyContent:'center', alignItems: 'center', borderRadius: 120, justifyContent: 'center', alignItems: 'center' }, { width: tambah, height: tambah }, { transform: [{ translateY: naik }, { rotateZ: putar }] }]}>
-        <Image source={require('../images/macan.png')} style={[{ width: 200, height: 200 }]} />
+        <Animated.Image source={require('../images/macan.png')} style={[{ width: mengecil, height: mengecil }]} />
       </Animated.View>
       <Animated.View style={[{ backgroundColor: 'transparent',  width: width, height: 100, position: 'absolute', top: height / 1.8, left: 0, right: 0,  alignItems: 'center' }, { transform: [{ translateX: active }]}]}>
         <ActivityIndicator size="large" color="#FFF" />
